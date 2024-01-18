@@ -25,7 +25,7 @@ public class ValidationController {
 	}
 
 
-	@PostMapping()
+	@PostMapping("calc")
 	public String confirmView(@Validated CalcForm form, BindingResult bindingResult, Model model) {
 		//入力された場合
 		if(bindingResult.hasErrors()) {

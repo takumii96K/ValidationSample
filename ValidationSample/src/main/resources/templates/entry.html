@@ -7,13 +7,14 @@
 <body>
 	<form th:action="@{/calc}" method="post" th:object="${calcForm}">
 		<div>
-			<input type="text" th:field="*{leftNm}">
+			<input type="text" th:field="*{leftNum}">
+			+
 			<input type="text" th:field="*{rightNum}">
 		</div>
-		<input type="sbmit" value="計算">
-			<!-- エラーを表示する -->
-		<ul th:if="${#fields.hasError('*')}">
-			<li th:each="err:${#fields.error('*')}" th:text="${err}"></li>
+		<input type="submit" value="計算">
+		<!-- エラーを表示する -->
+		<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err:${#fields.errors('*')}" th:text="${err}"></li>
 		</ul>
 	</form>
 </body>
